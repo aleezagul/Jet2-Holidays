@@ -1,0 +1,13 @@
+{
+  "name": "jet2-holidays",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "npx sass src/scss/style.scss src/css/style.css",
+    "watch-css": "npx sass --watch src/scss:src/css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

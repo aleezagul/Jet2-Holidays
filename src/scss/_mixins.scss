@@ -1,0 +1,68 @@
+
+
+@mixin button-style($bg-color, $size, $color){
+  background-color: $bg-color;
+  color: $color;
+  padding: $size;
+  border-radius:10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  
+    &:hover{
+      background-color: $bg-color;
+
+    
+  }
+}
+
+@mixin dropdown-content($bg-color: #fff, $border-color: #ddd, $hover-bg: #eaeaea, $hover-color: #007bff) {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: $bg-color;
+  padding: 12px 15px;
+  min-width: 100px;
+  z-index: 999;
+  border: 1px solid $border-color;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #333;
+
+    &:hover {
+      background-color: $hover-bg;
+      color: $hover-color;
+    }
+  }
+  .dropdown:hover .dropdown-content{
+    display: block;
+  }
+}
+
+@mixin heading($font-size, 
+$color:$primary-color,
+ $font-weight:bold, 
+ $line-height:1.5, 
+ $use-flex:false,
+ $justify-content:center,
+ $align-items:center,
+ $padding:10px
+ ){
+
+  font-size: 30px;
+  font-weight: $font-weight;
+  color: $color;
+  line-height: $line-height;
+  padding: $padding;
+
+@if $use-flex{
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+}
