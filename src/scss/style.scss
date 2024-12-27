@@ -1197,8 +1197,8 @@ form {
     display: none;
   }
   .suggest-destinations i {
-    font-size: 18px;
-    padding-top: 10px;
+    font-size: 22px;
+    padding-top: 20px;
     margin: 0;
   }
   .suggest-imgs {
@@ -1211,14 +1211,14 @@ form {
     scroll-padding-left: 0;
 
     img {
-      width: 150px;
-      height: 150px;
+      width: 200px;
+      height: auto;
     }
 
     button {
       position: absolute;
       bottom: 0px;
-      top: 80px;
+      top: 130px;
       left: 0px;
       width: 80px;
       height: 70px;
@@ -1513,4 +1513,8 @@ form {
       border-radius: 10px;
     }
   }
+
+ 
+
+ 
 }
