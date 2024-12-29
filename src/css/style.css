@@ -4,7 +4,11 @@
   box-sizing: border-box;
 }
 
-body {
+body,
+html {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
   font-family: "Open Sans", sans-serif;
   color: #333;
   width: 100%;
@@ -223,17 +227,24 @@ i {
 .radio-container {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
 }
 .radio-container span {
   color: #fff;
   font-size: 14px;
+  padding: 10px;
 }
 
 .radio-options {
   display: flex;
   gap: 20px;
   border: none;
+  padding: 0 20px;
+}
+.radio-options label {
+  display: flex;
+  align-items: center;
 }
 .radio-options input {
   width: 20px;
@@ -246,14 +257,14 @@ i {
   font-size: 16px;
 }
 .search-quantity span {
-  color: #fff;
+  font-size: 16px;
 }
 
 .search-row {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: 0 20px;
+  padding: 0px;
   width: 100%;
   height: 100px;
   margin: 0;
@@ -261,11 +272,12 @@ i {
 
 .search-container {
   flex: 2;
-  padding: 0px 4px;
   border: none;
   border-radius: 50px;
   max-width: 250px;
+  width: 100%;
   height: auto;
+  margin: 0;
 }
 .search-container .passenger {
   width: 200px;
@@ -619,8 +631,12 @@ p {
   text-decoration: underline;
   margin-top: 10px;
   color: #072f92;
+  cursor: pointer;
 }
 
+.suggest-destinations {
+  width: 100%;
+}
 .suggest-destinations i {
   font-size: 30px;
   font-weight: bold;
@@ -690,7 +706,8 @@ p {
   margin: 30px;
 }
 .jet-offers .offer-table {
-  width: 650px;
+  width: 100%;
+  max-width: 650px;
   height: 350px;
   border-collapse: collapse;
   background-color: #f9f9f9;
@@ -1059,6 +1076,10 @@ form button {
   gap: 10px;
 }
 
+.footer-dropdown {
+  display: none;
+}
+
 .footer-content-1 {
   display: flex;
   justify-content: space-between;
@@ -1092,12 +1113,20 @@ form button {
 .footer-2-1 h2 {
   margin-bottom: 10px;
   color: #fff;
+  font-size: 16px;
+  padding-top: 10px;
 }
 .footer-2-1 p {
+  display: inline;
+  white-space: normal;
   margin-bottom: 10px;
   color: #fff;
   background-color: #203240;
   font-size: 12px;
+  line-height: 1.6;
+}
+.footer-2-1 a {
+  text-decoration: none;
 }
 
 .footer-2-2 {
@@ -1118,10 +1147,22 @@ form button {
   font-size: 12px;
   color: #fff;
   background-color: #203240;
+  padding-bottom: 10px;
 }
 .footer-2-2 p span {
-  font-size: 14px;
+  font-size: 10px;
   color: #fc6;
+  padding-top: 10px;
+}
+
+.footer-2-links ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .hamburger-menu {
@@ -1131,6 +1172,26 @@ form button {
 /*600px, 601px, 768px, 992px, 1200px*/
 /*MOBILE VERSION*/
 @media only screen and (max-width: 600px) {
+  .explore-section {
+    padding: 10px 0;
+  }
+  .explore-img-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    gap: 10px;
+  }
+  .explore-img-container .e-img-1 img {
+    width: 200px;
+    height: auto;
+  }
+  .explore-img-container .hidden {
+    display: none;
+  }
   .table-section {
     width: 100%;
     padding: 0 20px;
@@ -1180,7 +1241,24 @@ form button {
     height: 10px;
   }
   .paypal-container {
-    display: none;
+    display: flex;
+    margin: 10px;
+    padding: 0;
+  }
+  .paypal-container img {
+    width: 80px;
+    height: auto;
+  }
+  .paypal-container a {
+    font-size: 14px;
+  }
+  .paypal-container button {
+    padding: 10px;
+    font-size: 10px;
+    margin-right: 40px;
+  }
+  .suggest-destinations {
+    padding: 10px;
   }
   .suggest-destinations i {
     font-size: 22px;
@@ -1189,16 +1267,19 @@ form button {
   }
   .suggest-imgs {
     display: flex;
+    justify-content: flex-start;
     flex-wrap: nowrap;
     overflow-x: auto;
-    height: auto;
     margin: 0;
-    padding-bottom: 10px;
-    scroll-padding-left: 0;
+    padding: 0;
+    cursor: pointer;
+    gap: 10px;
   }
   .suggest-imgs img {
     width: 200px;
     height: auto;
+    margin: 0;
+    padding: 0;
   }
   .suggest-imgs button {
     position: absolute;
@@ -1237,6 +1318,7 @@ form button {
     color: #fff;
     align-items: center;
     padding: 10px;
+    font-size: 18px;
   }
   .flight-search-wrapper .f-buttons .f-btn2 {
     width: 100%;
@@ -1247,6 +1329,7 @@ form button {
     color: #fff;
     align-items: center;
     padding: 10px;
+    font-size: 18px;
   }
   .search-btns {
     display: flex;
@@ -1274,42 +1357,37 @@ form button {
     width: 100%;
     max-width: 1050;
   }
-  .nav-menu-container {
-    display: flex;
-    justify-content: space-between;
+  .logo img {
+    max-width: 80px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 60px;
   }
-  .hamburger-menu {
+  .cta-btns {
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    order: 3;
-    cursor: pointer;
-  }
-  .hamburger-menu span {
-    font-size: 14px;
+    justify-content: flex-start;
   }
   .cta-btns .cta-1 {
     display: none;
   }
   .cta-btns .cta-2 {
-    background-color: #fff;
-    color: #000000;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    order: 1;
+    justify-content: flex-start;
+    border: none;
   }
   .cta-btns .cta-2 .fa-caret-down {
     display: none;
   }
-  .logo img {
-    display: flex;
-    justify-content: center;
-    max-width: 100%;
-    width: 200px;
-    height: auto;
-    margin-left: 30px;
-    order: 2;
+  .hamburger-menu {
+    display: block;
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .hamburger-menu span {
+    font-size: 14px;
   }
   .hub-wrapper {
     width: 100%;
@@ -1341,28 +1419,27 @@ form button {
     border: 1px solid #e0e0e0;
     margin: 20px;
   }
-  .fact-wrapper > * {
-    flex: 1;
+  .fact-wrapper .fact-info p {
+    width: 400px;
+  }
+  .sign-up {
+    margin: 10px;
+  }
+  .sign-up img {
+    height: 350px;
   }
   .overlay-content {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    position: absolute;
-    top: 15%;
-    color: #fff;
-    font-weight: bold;
+    top: 5%;
     font-size: 20px;
     left: 15%;
     gap: 20px;
   }
   .sign-up-form {
-    display: flex;
-    flex-direction: column;
-    width: 600px;
+    position: absolute;
     height: auto;
-    padding: 20px 40px;
-    border-radius: 10px;
+    top: 200px;
+    left: 40px;
+    background-color: transparent;
   }
   .sign-up-form h2 {
     display: none;
@@ -1372,9 +1449,19 @@ form button {
   }
   form {
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 10px 0;
+    gap: 20px;
+    position: relative;
+    right: 90px;
+    width: 300px;
+  }
+  form input {
+    width: 100%;
+    position: absolute;
+  }
+  form button {
+    display: block;
+    position: absolute;
+    right: 0;
   }
   .upgrade-section i {
     display: flex;
@@ -1442,24 +1529,104 @@ form button {
   .airport-name {
     display: none;
   }
+  .explore-section .explore-img-container {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+  }
+  .footer-content-1 {
+    display: none;
+  }
+  .footer-1 {
+    width: 100%;
+    height: auto;
+  }
+  .footer {
+    padding: 0;
+    margin: 0;
+  }
+  .footer-dropdown {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    background-color: #e82011;
+    width: 100%;
+    color: #ffffff;
+    border: none;
+    font-size: 20px;
+    margin: 60px 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    cursor: pointer;
+  }
+  .footer-2-1 h1 {
+    font-size: 16px;
+    padding-bottom: 20px;
+  }
+  .footer-2-1 h2 {
+    font-size: 12px;
+  }
+  .footer-2-1 p {
+    white-space: wrap;
+    text-align: center;
+  }
   .jet-offers {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 500px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-    margin: 20px 20px;
-    border-radius: 20px;
+    height: auto;
   }
   .jet-offers img {
     justify-content: center;
-    width: 380px;
-    height: auto;
+    width: 400px;
     border-radius: 10px;
-    margin-top: 170px;
+    margin: 10px 20px;
+    padding: 10px;
+  }
+  .offer-table-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: palegoldenrod;
+  }
+  .offer-container-1 .view-all-dest {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+  }
+  .offer-container-1 .offer-table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border-radius: 10px;
+    background-color: green;
+  }
+  .offer-container-1 .offer-table th {
+    text-align: left;
+    border: none;
+    background-color: #f9f9f9;
+    color: #444;
+    font-size: 20px;
+    padding: 8px 10px;
+    background-color: red;
+  }
+  .offer-container-1 .offer-table th span {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .footer-2-2 p {
+    font-size: 14px;
+    padding-bottom: 10px;
+    text-align: center;
+    white-space: pre-line;
+  }
+  .footer-2-2 p span {
+    font-size: 12px;
+    padding-top: 10px;
+    white-space: nowrap;
   }
 }
 
