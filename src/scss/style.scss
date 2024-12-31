@@ -938,7 +938,6 @@ td:hover {
     &:hover {
       background-color: darken($secondary-color, 10%);
       cursor: pointer;
-      margin: 0;
     }
   }
 }
@@ -1163,14 +1162,95 @@ form {
 }
 
 .hamburger-menu {
+  position: relative;
+}
+
+#hamburger-icon {
+  font-size: 24px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
   display: none;
 }
 
-/*600px, 601px, 768px, 992px, 1200px*/
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  z-index: 1000;
+  background-color: $tertiary-color;
+  overflow-y: auto;
+
+  #sidebar.show {
+    left: 0; 
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    cursor: pointer;
+
+    li {
+      border-bottom: 1px solid #d1d0d0;
+
+      a {
+        display: flex;
+        justify-content: flex-start;
+        gap: 15px;
+        align-items: center;
+        padding: 15px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 20px;
+
+        &:hover {
+          background-color: darken($color: $tertiary-color, $amount: 10%);
+          border-radius: 0;
+        }
+
+        .icon {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  &.hide {
+    display: none;
+  }
+
+ .install-app{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  gap: 10px;
+
+  .playstore{
+    padding: 10px;
+  }
+  .appstore{
+    padding: 10px;
+  }
+ }
+}
+
+/*600px*/
 
 /*MOBILE VERSION*/
 
 @media only screen and (max-width: 600px) {
+  #hamburger-icon {
+    display: block;
+    background-color: #fff;
+  }
   .explore-section {
     padding: 10px 0;
   }
@@ -1385,41 +1465,27 @@ form {
       max-width: 1050;
     }
   }
-
+  .nav-menu-container {
+    padding: 10px;
+  }
   .logo img {
-    max-width: 80px;
     position: absolute;
     left: 50%;
-    transform: translate(-50%);
-    top: 60px;
+    transform: translate(-100%);
+    top: 70px;
   }
 
   .cta-btns {
-    display: flex;
-    justify-content: flex-start;
-    .cta-1 {
-      display: none;
-    }
     .cta-2 {
-     display: flex;
-     justify-content: flex-start;
-
       border: none;
+      background-color: green;
 
       .fa-caret-down {
         display: none;
       }
     }
-  }
-  .hamburger-menu {
-    display: block;
-    position: absolute;
-    right: 20px;
-    cursor: pointer;
-    text-align: center;
-
-    span {
-      font-size: 14px;
+    .cta-1 {
+      display: none;
     }
   }
 
@@ -1706,3 +1772,11 @@ form {
     }
   }
 }
+
+/*601px*/
+
+/*768px*/
+
+/*992px*/
+
+/*1200px*/

@@ -83,12 +83,113 @@
     <div class="nav-menu-container">
       <div class="logo">
         <img src="../images/logo.svg" alt="Logo">
-      </div>
 
-      <div class="hamburger-menu right">
-    <i class="fas fa-bars"></i>
-    <span>Menu</span>
+      <div class="hamburger-menu">
+        <button id="hamburger-icon">
+          ☰
+        </button>
 
+        </div>
+        <nav id="sidebar" class="hide">
+          <ul>
+            <li>
+              <a href="#home">
+                <span class="icon"><i class="fa-solid fa-house"></i></span> Home
+              </a>
+            </li>
+            <li>
+              <a href="#about">
+                <span class="icon"><i class="fa-solid fa-sun"></i></span> Jet2holidays
+              </a>
+            </li>
+            <li>
+              <a href="#services">
+                <span class="icon"><i class="fa-regular fa-map"></i></span> Destinations
+              </a>
+            </li>
+            <li>
+              <a href="#contact">
+                <span class="icon"><i class="fa-solid fa-magnifying-glass"></i></span> Deals
+              </a>
+            </li>
+            <li>
+              <a href="#services">
+                <span class="icon"><i class="fa-solid fa-suitcase"></i></span> Trvel Essentials
+              </a>
+            </li>
+            <li>
+              <a href="#services">
+                <span class="icon"><i class="fa-solid fa-sterling-sign"></i></span> Low Fare Finder
+              </a>
+            </li>
+            <li>
+              <a href="#services">
+                <span class="icon"><i class="fa-solid fa-person-skiing"></i></span> Ski Flights
+              </a>
+            </li>
+            <li>
+              <a href="#services">
+                <span class="icon"><i class="fa-solid fa-user-group"></i></span> Group Bookings
+              </a>
+            </li>
+            <li>
+              <a href="#services">
+                <span class="icon"><i class="fa-solid fa-list-check"></i></span> Manage My Booking
+              </a>
+            </li>
+            <li>
+              <a href="#services">
+                <span class="icon"><i class="fa-regular fa-clock"></i></span> Latest Travel Info
+              </a>
+            </li>
+            <li>
+              <a href="#services">
+                <span class="icon"><i class="fa-solid fa-car"></i></span> Car Hire
+              </a>
+            </li>
+            <li>
+              <a href="#services">
+                <span class="icon"><i class="fa-solid fa-umbrella"></i></span> Insurance
+              </a>
+            </li>
+            <li>
+              <a href="#services">
+                <span class="icon"><i class="fa-solid fa-star"></i></span> Reviews & Awards
+              </a>
+            </li>
+            <li>
+              <a href="#services">
+                <span class="icon"><i class="fa-regular fa-circle-question"></i></span> FAQs
+              </a>
+            </li>
+            <li>
+              <a href="#services">
+                <span class="icon"><i class="fa-regular fa-address-card"></i></span> Contact Us
+              </a>
+            </li>
+            <li>
+              <a href="#services">
+                <span class="icon"><i class="fa-solid fa-plane-departure"></i></span> Jet2.com-Financial Performance
+              </a>
+            </li>
+            <li>
+              <a href="#services">
+                <span class="icon"><i class="fa-solid fa-user"></i></span> myJet2 Account
+              </a>
+            </li>
+            <li>
+              <a href="#services">
+                <span class="icon"><span>🇬🇧</span></span> English<i class="fas fa-caret-down"></i>
+
+              </a>
+            </li>
+          </ul>
+          <div class="install-app">
+            <button class="playstore">PLAYSTORE</button>
+          <button class="appstore">APPSTORE</button>
+          </div>
+          
+        </nav>
   </div>
   
       <div class="cta-btns">
@@ -110,7 +211,7 @@
   
     <div class="left">
       <i class="fa-solid fa-house"></i>
-    <img src="../images/logo.png.svg" alt="">
+    <img src="../images/logo-3.svg" alt="">
     <img src="../images/75-img.png/" alt="">
     </div>
     
@@ -1022,8 +1123,33 @@
   </div>
  
 </footer>
+<script>
+   const hamburgerIcon = document.getElementById('hamburger-icon');
+const sidebar = document.getElementById('sidebar');
+const body = document.body;
 
-    <script src="./js/test.js"></script>
+hamburgerIcon.addEventListener('click', () => {
+  if (sidebar.classList.contains('hide')) {
+    sidebar.classList.remove('hide');
+    sidebar.style.left = '0';
+  } else {
+    sidebar.classList.add('hide');
+    sidebar.style.left = '-250px';
+
+  }
+});
+
+body.addEventListener('click', (event) =>{
+  if(!sidebar.contains(event.target)&& !hamburgerIcon.contains(event.target)){
+    sidebar.classList.remove('show');
+  }
+});
+
+sidebar.addEventListener('click', (event)=>{
+  event.stopPropagation();
+});
+</script>
+
     <script src="./js/script.js"></script>
 
   </body>

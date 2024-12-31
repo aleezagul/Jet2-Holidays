@@ -943,7 +943,6 @@ td:hover {
 .fact-info-section button:hover {
   background-color: rgb(11.8775510204, 76.8081632653, 182.1224489796);
   cursor: pointer;
-  margin: 0;
 }
 
 .fact-img-section img {
@@ -1166,12 +1165,84 @@ form button {
 }
 
 .hamburger-menu {
+  position: relative;
+}
+
+#hamburger-icon {
+  font-size: 24px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
   display: none;
 }
 
-/*600px, 601px, 768px, 992px, 1200px*/
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  z-index: 1000;
+  background-color: #203240;
+  overflow-y: auto;
+}
+#sidebar #sidebar.show {
+  left: 0;
+}
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  cursor: pointer;
+}
+#sidebar ul li {
+  border-bottom: 1px solid #d1d0d0;
+}
+#sidebar ul li a {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  align-items: center;
+  padding: 15px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+#sidebar ul li a:hover {
+  background-color: rgb(15, 23.4375, 30);
+  border-radius: 0;
+}
+#sidebar ul li a .icon {
+  font-size: 20px;
+}
+#sidebar.hide {
+  display: none;
+}
+#sidebar .install-app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  gap: 10px;
+}
+#sidebar .install-app .playstore {
+  padding: 10px;
+}
+#sidebar .install-app .appstore {
+  padding: 10px;
+}
+
+/*600px*/
 /*MOBILE VERSION*/
 @media only screen and (max-width: 600px) {
+  #hamburger-icon {
+    display: block;
+    background-color: #fff;
+  }
   .explore-section {
     padding: 10px 0;
   }
@@ -1357,37 +1428,24 @@ form button {
     width: 100%;
     max-width: 1050;
   }
+  .nav-menu-container {
+    padding: 10px;
+  }
   .logo img {
-    max-width: 80px;
     position: absolute;
     left: 50%;
-    transform: translate(-50%);
-    top: 60px;
-  }
-  .cta-btns {
-    display: flex;
-    justify-content: flex-start;
-  }
-  .cta-btns .cta-1 {
-    display: none;
+    transform: translate(-100%);
+    top: 70px;
   }
   .cta-btns .cta-2 {
-    display: flex;
-    justify-content: flex-start;
     border: none;
+    background-color: green;
   }
   .cta-btns .cta-2 .fa-caret-down {
     display: none;
   }
-  .hamburger-menu {
-    display: block;
-    position: absolute;
-    right: 20px;
-    cursor: pointer;
-    text-align: center;
-  }
-  .hamburger-menu span {
-    font-size: 14px;
+  .cta-btns .cta-1 {
+    display: none;
   }
   .hub-wrapper {
     width: 100%;
@@ -1629,5 +1687,9 @@ form button {
     white-space: nowrap;
   }
 }
+/*601px*/
+/*768px*/
+/*992px*/
+/*1200px*/
 
 /*# sourceMappingURL=style.css.map */
